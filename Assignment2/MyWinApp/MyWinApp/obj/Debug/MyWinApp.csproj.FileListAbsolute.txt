@@ -1,0 +1,10 @@
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\obj\Debug\MyWinApp.csprojAssemblyReference.cache
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\obj\Debug\MyWinApp.CustomerInformation.resources
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\obj\Debug\MyWinApp.Properties.Resources.resources
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\obj\Debug\MyWinApp.csproj.GenerateResource.cache
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\obj\Debug\MyWinApp.csproj.CoreCompileInputs.cache
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\bin\Debug\MyWinApp.exe.config
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\bin\Debug\MyWinApp.exe
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\bin\Debug\MyWinApp.pdb
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\obj\Debug\MyWinApp.exe
+C:\Users\5CG7083DN0\Desktop\GAUS\Assignment2\MyWinApp\MyWinApp\obj\Debug\MyWinApp.pdb
