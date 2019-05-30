@@ -53,7 +53,7 @@ namespace BankCustomer
                 string address = "";
                 int contactNo = 0;
                 int accountNo = 0;
-                //int amount = 0;
+                int amount = 0;
                 userNameLabel.Text = "";
                 contactNoLabel.Text = "";
                 emailLabel.Text = "";
@@ -118,6 +118,7 @@ namespace BankCustomer
                 emails.Add(email);
                 address = addressTextBox.Text;
                 addresses.Add(address);
+                amounts.Add(0);
             }
             catch (Exception ex)
             {
@@ -232,15 +233,19 @@ namespace BankCustomer
                     MessageBox.Show("Please enter positive value");
                     return;
                 }
+
+                int acCount = 0;
                 foreach (int account in accountNos)
                 {
+                   
                         int amt = 0;
                         if (account == (Convert.ToInt32(accountNoBalanceTextBox.Text)))
                         {
                             amt = amt + Convert.ToInt32(amountTextBox.Text);
-                            amounts[account]=amt;
+                            amounts[acCount] =amt;
                         }
-                         
+
+                    acCount++;
                 }
             }
             catch (Exception ex)
