@@ -132,7 +132,7 @@ namespace ArrayPractice
                 {
                     for (int i = 0; i < number.Length; i++)
                     {
-                        if (index != i)
+                       // if (index != i)
                         {
                             if (number[index] != number[i])
                             {

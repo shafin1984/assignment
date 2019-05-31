@@ -43,8 +43,14 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.outputRichTextBox = new System.Windows.Forms.RichTextBox();
             this.showAllButton = new System.Windows.Forms.Button();
-            this.serchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.soldierNameRadioButton = new System.Windows.Forms.RadioButton();
+            this.soldierNoRadioButton = new System.Windows.Forms.RadioButton();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.outputTotalTextBox = new System.Windows.Forms.TextBox();
+            this.outputAvgTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -171,13 +177,6 @@
             this.showAllButton.UseVisualStyleBackColor = true;
             this.showAllButton.Click += new System.EventHandler(this.showAllButton_Click);
             // 
-            // serchTextBox
-            // 
-            this.serchTextBox.Location = new System.Drawing.Point(578, 39);
-            this.serchTextBox.Name = "serchTextBox";
-            this.serchTextBox.Size = new System.Drawing.Size(100, 20);
-            this.serchTextBox.TabIndex = 5;
-            // 
             // SearchButton
             // 
             this.SearchButton.Location = new System.Drawing.Point(466, 36);
@@ -188,13 +187,81 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // soldierNameRadioButton
+            // 
+            this.soldierNameRadioButton.AutoSize = true;
+            this.soldierNameRadioButton.Location = new System.Drawing.Point(563, 40);
+            this.soldierNameRadioButton.Name = "soldierNameRadioButton";
+            this.soldierNameRadioButton.Size = new System.Drawing.Size(103, 17);
+            this.soldierNameRadioButton.TabIndex = 7;
+            this.soldierNameRadioButton.TabStop = true;
+            this.soldierNameRadioButton.Text = "By Soldier Name";
+            this.soldierNameRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // soldierNoRadioButton
+            // 
+            this.soldierNoRadioButton.AutoSize = true;
+            this.soldierNoRadioButton.Location = new System.Drawing.Point(672, 40);
+            this.soldierNoRadioButton.Name = "soldierNoRadioButton";
+            this.soldierNoRadioButton.Size = new System.Drawing.Size(89, 17);
+            this.soldierNoRadioButton.TabIndex = 8;
+            this.soldierNoRadioButton.TabStop = true;
+            this.soldierNoRadioButton.Text = "By Soldier No";
+            this.soldierNoRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(563, 68);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchTextBox.TabIndex = 9;
+            // 
+            // outputTotalTextBox
+            // 
+            this.outputTotalTextBox.Location = new System.Drawing.Point(516, 398);
+            this.outputTotalTextBox.Name = "outputTotalTextBox";
+            this.outputTotalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.outputTotalTextBox.TabIndex = 10;
+            // 
+            // outputAvgTextBox
+            // 
+            this.outputAvgTextBox.Location = new System.Drawing.Point(516, 363);
+            this.outputAvgTextBox.Name = "outputAvgTextBox";
+            this.outputAvgTextBox.Size = new System.Drawing.Size(100, 20);
+            this.outputAvgTextBox.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(403, 363);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Top Average Scorer";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(403, 398);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Top Total Scorer";
+            // 
             // FRAS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.outputAvgTextBox);
+            this.Controls.Add(this.outputTotalTextBox);
+            this.Controls.Add(this.searchTextBox);
+            this.Controls.Add(this.soldierNoRadioButton);
+            this.Controls.Add(this.soldierNameRadioButton);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.serchTextBox);
             this.Controls.Add(this.showAllButton);
             this.Controls.Add(this.outputRichTextBox);
             this.Controls.Add(this.SaveButton);
@@ -210,6 +277,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.soldierNoTextBox);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "FRAS";
             this.Text = "Fire Range Automation System";
             this.Load += new System.EventHandler(this.FRAS_Load);
@@ -235,8 +303,14 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.RichTextBox outputRichTextBox;
         private System.Windows.Forms.Button showAllButton;
-        private System.Windows.Forms.TextBox serchTextBox;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.RadioButton soldierNameRadioButton;
+        private System.Windows.Forms.RadioButton soldierNoRadioButton;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.TextBox outputTotalTextBox;
+        private System.Windows.Forms.TextBox outputAvgTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
