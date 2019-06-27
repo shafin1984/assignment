@@ -26,41 +26,48 @@ namespace WindowsFormsApp1
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            int isExecuted;
-            bool isExist;
-            if (isBlank(customerNameTextBox.Text)) { return; };
-            if (isBlank(emailTextBox.Text)) { return; };
-            if (isBlank(accountNumberTextBox.Text)) { return; };
-            if (isBlank(openingDateTextBox.Text)) { return; };
-            if (accountNumberTextBox.Text.Length == 8)
+            try
             {
-                customer.accountNumber = accountNumberTextBox.Text;
-            }
-            else
-            {
-                MessageBox.Show("Account number must be 8 digits");
-                return;
-            }
-            customer.customerName = customerNameTextBox.Text;
-            customer.email = emailTextBox.Text;
-            customer.openingDate = openingDateTextBox.Text;
-            isExist=_customerManager.isExist(customer);
-            if (isExist)
-            { isExecuted = _customerManager.InsertCustomer(customer);
-                if (isExecuted > 0)
+                int isExecuted;
+                bool isExist;
+                if (isBlank(customerNameTextBox.Text)) { return; };
+                if (isBlank(emailTextBox.Text)) { return; };
+                if (isBlank(accountNumberTextBox.Text)) { return; };
+                if (isBlank(openingDateTextBox.Text)) { return; };
+                if (accountNumberTextBox.Text.Length == 8)
                 {
-                    MessageBox.Show("Saved");
+                    customer.accountNumber = accountNumberTextBox.Text;
                 }
                 else
                 {
-                    MessageBox.Show("Not Saved");
+                    MessageBox.Show("Account number must be 8 digits");
+                    return;
+                }
+                customer.customerName = customerNameTextBox.Text;
+                customer.email = emailTextBox.Text;
+                customer.openingDate = openingDateTextBox.Text;
+                isExist = _customerManager.isExist(customer);
+                if (isExist)
+                {
+                    isExecuted = _customerManager.InsertCustomer(customer);
+                    if (isExecuted > 0)
+                    {
+                        MessageBox.Show("Saved");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not Saved");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Account Number Exist!!!");
                 }
             }
-            else
+            catch (Exception exp)
             {
-                MessageBox.Show("Account Number Exist!!!");
+                MessageBox.Show(exp.Message);
             }
-            
             
         }
         private bool isBlank(String input)

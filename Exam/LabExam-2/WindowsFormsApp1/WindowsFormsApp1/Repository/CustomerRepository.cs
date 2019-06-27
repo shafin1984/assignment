@@ -16,17 +16,18 @@ namespace WindowsFormsApp1.Repository
         SqlConnection sqlConnection;
         SqlCommand sqlCommand;
         string commandString;
+        SqlDataReader dreader;
 
         public int InsertCustomer(Customer customer)
         {
-            sqlConnection = new SqlConnection(connectionString);
-            int isExecuted;
-            commandString = @"insert into Customers(customerName, email, accountNumber, openingDate)values('"+customer.customerName+"', '"+customer.email+"', '"+customer.accountNumber+"', '"+customer.openingDate+"')";
-            sqlCommand = new SqlCommand(commandString, sqlConnection);
-            sqlConnection.Open();
-            isExecuted = sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-            return isExecuted;
+                sqlConnection = new SqlConnection(connectionString);
+                int isExecuted;
+                commandString = @"insert into Customers(customerName, email, accountNumber, openingDate)values('" + customer.customerName + "', '" + customer.email + "', '" + customer.accountNumber + "', '" + customer.openingDate + "')";
+                sqlCommand = new SqlCommand(commandString, sqlConnection);
+                sqlConnection.Open();
+                isExecuted = sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+                return isExecuted;
         }
         public bool isExist(Customer customer)
         {
@@ -41,9 +42,10 @@ namespace WindowsFormsApp1.Repository
             sqlConnection.Close();
             return isExist;
         }
-        public int UpdateBalance(Customer customer)
+        public int DepositBalance(Customer customer)
         {
-            commandString = @"UPDATE Customers SET balance=" + customer.balance + " + WHERE accountNumber='" + customer.accountNumber + "'";
+            sqlConnection = new SqlConnection(connectionString);
+            commandString = @"UPDATE Customers SET balance = balance + "+customer.balance+" WHERE accountNumber = '"+customer.accountNumber+"'"; 
             sqlCommand = new SqlCommand(commandString, sqlConnection);
 
             sqlConnection.Open();
@@ -53,6 +55,44 @@ namespace WindowsFormsApp1.Repository
             sqlConnection.Close();
 
             return isExecuted;
+        }
+        public int CheckBalance(Customer customer)
+        {
+            sqlConnection = new SqlConnection(connectionString);
+            commandString = @"select balance from Customers where accountNumber='"+customer.accountNumber+"';";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+            int bal=0;
+            sqlConnection.Open();
+            dreader = sqlCommand.ExecuteReader();
+            if (dreader.Read()) { bal = Convert.ToInt32(dreader[0]); }
+            sqlConnection.Close();
+            return bal;
+        }
+        public int WithdrawBalance(Customer customer)
+        {
+            sqlConnection = new SqlConnection(connectionString);
+            commandString = @"UPDATE Customers SET balance = balance - " + customer.balance + " WHERE accountNumber = '" + customer.accountNumber + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+        public DataTable Display(Customer customer)
+        {
+            sqlConnection = new SqlConnection(connectionString);
+            commandString = @"select * from Customers where accountNumber='"+customer.accountNumber+"';";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+            DataTable dataTable = new DataTable();
+            sqlConnection.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dataTable);
+            sqlConnection.Close();
+            return dataTable;
         }
     }
     

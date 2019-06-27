@@ -96,6 +96,7 @@
     <EmbeddedResource Include="UserInterfaces\Transaction.resx">
       <DependentUpon>Transaction.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\WindowsFormsApp1.Models.Customer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

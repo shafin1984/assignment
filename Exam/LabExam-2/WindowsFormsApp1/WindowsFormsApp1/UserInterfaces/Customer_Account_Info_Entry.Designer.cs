@@ -37,6 +37,7 @@
             this.openingDateTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // customerNameTextBox
@@ -113,11 +114,22 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(80, 178);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 9);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "(YYYY-MM-DD)";
+            // 
             // Customer_Account_Info_Entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 252);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -145,5 +157,6 @@
         private System.Windows.Forms.TextBox openingDateTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Label label5;
     }
 }

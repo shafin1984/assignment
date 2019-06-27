@@ -54,6 +54,7 @@
             this.WithdrawButton.TabIndex = 1;
             this.WithdrawButton.Text = "Withdraw";
             this.WithdrawButton.UseVisualStyleBackColor = true;
+            this.WithdrawButton.Click += new System.EventHandler(this.WithdrawButton_Click);
             // 
             // label1
             // 

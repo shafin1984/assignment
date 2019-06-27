@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
 
         private void ThirdButton_Click(object sender, EventArgs e)
         {
-            Search_Customer_Account_Info search_Customer_Account_Info = new Search_Customer_Account_Info();
+            bu search_Customer_Account_Info = new bu();
             search_Customer_Account_Info.Show();
         }
     }
